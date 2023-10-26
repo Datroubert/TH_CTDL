@@ -1,0 +1,47 @@
+public static int[][] subtract(int[][] a, int[][] b, int size) {
+		int i, j;
+        int d[][] = new int[size][size];
+ 
+        for (i = 0; i < size; i++)
+            for (j = 0; j < size; j++)
+                d[i][j] = a[i][j] - b[i][j];
+ 
+        return d;
+    }
+	
+	// In Ma tran
+	public static void print(int M[][], int rowSize, int colSize) {
+		for (int i = 0; i < rowSize; i++) {
+		for (int j = 0; j < colSize; j++)
+			System.out.print(M[i][j] + " ");
+			 System.out.println();
+		}
+		
+	}
+	//
+	public static void main(String[] args) {
+		int size = 4;
+		 
+	        int a[][] = { { 7, 0, 0, 0 },
+	                      { 0, 2, 0, 0 },
+	                      { 0, 0, 5, 0 },
+	                      { 0, 0, 0, 3 } };
+	        System.out.println("Matrix a:");
+	        	print(a, size, size);
+	 
+	        int b[][] = { { 2, 0, 0, 0 },
+	                      { 0, 1, 0, 0 },
+	                      { 0, 0, 3, 0 },
+	                      { 0, 0, 0, 1 } };
+	        System.out.println("Matrix b:");
+	        	print(b, size, size);
+	 
+	        // Subtracting 2 matrices
+	        int d[][] = subtract(a, b, size);
+	 
+	        // Print the result
+	        System.out.println("Result:");
+	        	print(d, size, size);
+	}
+
+}
