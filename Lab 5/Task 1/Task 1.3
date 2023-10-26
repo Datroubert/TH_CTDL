@@ -1,0 +1,56 @@
+public static void print(int M[][], int rowSize, int colSize) {
+
+				for (int i = 0; i < rowSize; i++) {
+					for (int j = 0; j < colSize; j++)
+					System.out.print(M[i][j] + " ");
+						System.out.println();
+				}
+		}
+
+				public static void multiply(int row1, int col1, int[][]a, 
+				               			int row2, int col2, int[][] b) {
+						int i, j, k;
+
+				// Print matrix a, b
+				System.out.println("Matrix A:");
+					print(a, row1, col1);
+				System.out.println("Matrix B:");
+					print(b, row2, col2);
+				
+				// Check Multiply
+				if (row2 != col1) {
+				
+				System.out.println("Impossible to Multiply");
+					return;
+				}
+				
+				int c[][] = new int[row1][col2];
+				
+				// Multiply the two matrices
+				for (i = 0; i < row1; i++) {
+				for (j = 0; j < col2; j++) {
+				for (k = 0; k < row2; k++)
+				    c[i][j] += a[i][k] * b[k][j];
+				}
+			}
+				
+				// Print the result
+				System.out.println("Result:");
+				print(c, row1, col2);
+			}
+				
+				public static void main(String[] args) {
+					int row1 = 4, col1 = 3, row2 = 3, col2 = 4;
+				
+				int[][] a = { { 1, 1, 1 },
+						      { 2, 2, 2 },
+						      { 3, 3, 3 },
+						      { 4, 4, 4 } };
+				
+				int[][] b = { { 1, 1, 1, 1 },
+						      { 2, 2, 2, 2 },
+						      { 3, 3, 3, 3 } };
+				
+				multiply(row1, col1, a, row2, col2, b);
+		}
+}
