@@ -1,0 +1,103 @@
+import java.util.Collection;
+import java.util.List;
+
+public class BST<E extends Comparable<E>> {
+	private BNode<E> root;
+
+	public BST() {
+		this.root = null;
+	}
+	// Add element e into BST
+	public void add(E e) {
+		BNode<E> newNode = new BNode<E>(e);
+		
+		if(root == null) {
+			root = newNode ;
+		}else {//root != null
+			BNode<E> temp = root; 
+			while(true) {
+				if(temp.getData().hashCode() > newNode.getData().hashCode()) {
+					if (temp.getLeft() == null) {
+						temp.setLeft(newNode);
+						break;
+					}else {
+						temp = temp.getLeft();
+					}
+				}else {
+					if (temp.getRight() == null) {
+						temp.setRight(newNode);
+						break;
+					}else {
+						temp = temp.getRight();
+					}
+				}	
+			}
+		}
+//		if(root == null) {
+//			root = new BNode<E>(e) ;
+//		}else {//root != null 
+//			if(root.getData().compareTo(e) < 0) {
+//				
+//			}else {
+//				
+//			}
+//		}
+	}
+	// Add a collection of elements col into BST
+	public void add(Collection<E> col) {
+		
+	}
+	// compute the depth of a node in BST
+	public int depth(E node) {
+	// TODO
+	return -1;
+	}
+	// compute the height of BST
+	public int height() {
+		
+	return -1;
+	}
+	// Compute total nodes in BST
+	public int size() {
+		
+	return -1;
+	}
+	// Check whether element e is in BST
+	public boolean contains(E e) {
+	// TODO
+	return false;
+	}
+	// Find the minimum element in BST
+	public E findMin() {
+	// TODO
+	return null;
+	}
+	// Find the maximum element in BST
+	public E findMax() {
+	// TODO
+	return null;
+	}
+	// Remove element e from BST
+	public boolean remove(E e) {
+	// TODO
+		return false;
+	}
+	// get the descendants of a node
+	public List<E> descendants(E data) {
+	// TODO
+	return null;
+	}
+	// get the ancestors of a node
+	public List<E> ancestors(E data) {
+	// TODO
+	return null;
+	}
+	public static void main(String[] args) {
+		BST<Integer> bsTree =  new BST<Integer>();
+		bsTree.add(3);bsTree.add(1);
+		bsTree.add(6);bsTree.add(2);
+		bsTree.add(4);bsTree.add(9);
+		
+		System.out.println();
+	}
+}
